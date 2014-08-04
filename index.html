@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<!-- Templates -->
+<ul id="games-list"></ul>
+<div id="games-list-helper"></div>
+
+
+
+<script id="my-template" type="text/x-handlebars-template">
+	<h1>{{ title }}</h1> 
+	<p>{{ message }}</p>
+
+</script>
+
+
+<script id="item-template" type="text/x-handlebars-template">
+	<li><strong> {{title}}</strong> - {{platform}} </li>
+
+</script>
+
+
+<!-- Use the handlebars each helper -->
+<script id="helper-template" type="text/x-handlebars-template">
+<ul>
+{{#each games}}
+	<li> {{title}} - {{platform}}
+		{{#if price}}
+			<em> - {{price}} </em>
+		{{else}}
+			<em>  - No price set</em>
+		{{/if}}
+
+
+	</li>
+
+{{/each}}
+</ul>
+</script>
+	
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <!-- Handlebar JS from CDN -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
